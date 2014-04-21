@@ -1,0 +1,129 @@
+.edit{
+	float: right;
+}
+
+.brand-nav{
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+body{
+	opacity:1.5;
+}
+
+.app_wrapper{
+	background-color: #fff;
+	padding: 15px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.listHolderItem{
+	width: 100%;
+}
+
+	/*.list-group li{
+		background-color: lightgrey;
+	}*/
+
+
+.word_list_item{
+	padding: -10px;
+	font-size: 1.2em;
+}
+
+#word_input_clear{
+	float: right;
+	text-decoration: underline;
+	color: blue;
+};
+
+.annotate{
+	margin-left: 20px;
+}
+
+
+#word_detail_box{
+	min-height: 200px;
+}
+
+.exampleSentence{
+	margin-left: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+#current_word{
+	min-height: 40px;
+	background-color: #fff;
+	width: auto;
+	display: block;
+	color: darkblue;
+	font-family: 'Droid Serif', serif;
+	padding: 3px;
+	border: 1px solid grey;
+}
+
+.listHolder{
+	padding-top: 20px;
+}
+
+.word_list{
+	margin-top: 30px;
+}
+
+#links ul {
+        list-style-type: none;
+        width: 100%;
+} 
+
+#links li {
+        border: 1px dotted #999;
+        border-width: 1px 0 lightgrey;
+}
+
+#links li a { 
+        color: #990000;
+        display: block;
+        font: bold 120% Arial, Helvetica, sans-serif;
+        padding: 5px;
+        text-decoration: none;
+}
+
+ * html #links li a {  /* make hover effect work in IE */
+	width: 100%;
+}
+
+#links li a:hover {
+        background: #ffffcc;
+}
+
+#links a em { 
+        color: #333;
+        display: block;
+        font: normal 85% Verdana, Helvetica, sans-serif;
+        line-height: 125%; 
+}
+
+#links a span {
+        color: #125F15;
+        font: normal 70% Verdana, Helvetica, sans-serif;
+        line-height: 150%;
+}
+
+#word_input{
+	background-color: #FDFDF0
+}
+
+.nav{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	font-size: 1.2em;
+	background-color: #FBF0D9;
+	color:#5F4B32;
+}
+
+.annotation_buttons{
+	color: #00008B;
+	font-family: 'Raleway', sans-serif;
+}

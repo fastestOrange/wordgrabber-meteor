@@ -1,0 +1,145 @@
+<head>
+  <title>wordgrabber</title>
+</head>
+
+<body>
+  {{> mainWrapper}}
+</body>
+
+<!-- ********************* -->
+<!--       GLOBAL NAV      -->
+<!-- ********************* -->
+<template name="globalNav">
+
+	<ul  class="nav navbar-nav">
+          <li class="active">
+            <a href="#">ListView</a>
+          </li>
+          <li>
+            <a href="#">All Words</a>
+          </li>
+          <li>
+            <a href="#">Create New List</a>
+          </li>
+          <li>
+            <a href="#">My Lists Dropdown</a>
+          </li>
+        </ul>
+</template>
+
+<!-- ********************* -->
+<!--       MAIN WRAPPER      -->
+<!-- ********************* -->
+<template name="mainWrapper">
+	<nav id="global_nav" class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="font-weight: bold" href="#">Word Grabber</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        {{> globalNav}}
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row app_wrapper">
+        <div class="appWrapper">
+            <div class="row">
+	            <div class="col-md-8">
+
+	              <nav class="navbar navbar-default" role="navigation">
+	                <!-- <div class="navbar-header">
+	                </div> -->
+	                <div class="collapse navbar-collapse navbar-ex1-collapse">
+	                	<h3>{{currentWord}}</h3>
+	                  <ul class="nav nav-tabs">
+	                    <li class="active">
+	                      <a href="#pane1" id="panel1Tab" data-toggle="tab">Annotate</a>
+	                    </li>
+	                    <li>
+	                      <a href="#pane2" data-toggle="tab">Dictionary Entry</a>
+	                    </li>
+	                    <li>
+	                      <a href="#pane3" data-toggle="tab">My Notes</a>
+	                    </li>
+	                  </ul>
+	                </div>
+	              </nav>
+	              <div class="form-group">
+	                <input type="text" id="word_input" class="form-control" placeholder="Type new word and hit return">
+	              </div>
+	              <div class="tab-content" id="word_detail_box">
+	                {{> tabContent}}
+	              </div>
+              </div>
+              <div class="col-md-4">
+              	  <h4>Marta #1</h4>
+	              <div class = "listHolder">
+	                  {{> listHolder}}
+	              </div>
+	            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+
+<!-- ********************* -->
+<!--       TAB CONTENT    -->
+<!-- ********************* -->
+<template name="tabContent">
+	<div class="tab-content">
+		<div id="pane1" class="tab-pane active">
+			<div id="annotations"></div>
+				<div class="annotation_buttons btn-group">
+					<a href="#" id="user_definition" class="btn btn-default">Definition</a>
+					<a href="#" id="create_example" class="btn btn-default">Examples</a>
+					<a href="#" id="user_video" class="btn btn-default">Video</a>
+					<a href="#" id="user_recording" class="btn btn-default">Recording</a>
+				</div>
+				{{#if annotate}}
+				  {{> annotator}}
+				{{/if}}
+			<div id="examples"></div>
+		</div>
+		<div id="pane2" class="tab-pane">
+		</div>
+		<div id="pane3" class="tab-pane">
+		</div>
+	</div>
+</template>
+
+<!-- ********************* -->
+<!--       LIST HOLDER     -->
+<!-- ********************* -->
+<template name="listHolder">
+      <ul class="list-group">
+        {{#each words}}
+          {{> listHolderItem}}
+        {{/each}}
+      </ul>
+</template>
+
+<!-- ********************* -->
+<!--  LIST HOLDER ITEM     -->
+<!-- ********************* -->
+<template name="listHolderItem">
+	<li class="list-group-item listHolderItem">
+		<a class="word_list_word" href="#" >{{capitalized}}</a><!-- <span class="edit btn glyphicon glyphicon-remove-circle"></span> -->
+	</li>
+</template>
+
+<!-- ********************* -->
+<!--       ANNOTATOR     -->
+<!-- ********************* -->
+<template name="annotator">
+	<div class="textbox">
+		<h3 id="label_ex_textbox">{{annotateLabel}}</h3>
+		<textarea  id="ex_textbox" rows="2" cols="50"></textarea>
+		<button id="saveTextBox" class="textbox_buttons btn btn-success">Save</button>
+		<button id="cancelTextBox" class=" textbox_buttons btn btn-danger">Cancel</button>
+	</div>
+</template>
+
